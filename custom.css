@@ -1,0 +1,58 @@
+html {
+  background: url(bodybg.jpeg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  
+}
+
+body {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.guess-body {
+  background-color: #000;
+  opacity: 0.7;
+  padding: 10px 0 50px;
+  border-radius: 30px;
+    text-align: center;
+}
+.form-number {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+
+}
+.form-number .form-number-heading,
+.form-number .checkbox {
+  margin-bottom: 30px;
+}
+.form-number .checkbox {
+  font-weight: normal;
+}
+.form-number .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-number .form-control:focus {
+  z-index: 2;
+}
+
+/* Submit Button */
+.form-number .btn-block {
+  margin: 30px 0;
+}
+
+.guess-body .btn-group {
+  width: 273px;
+  margin: 0 auto 80px;
+  display: inherit;
+}
