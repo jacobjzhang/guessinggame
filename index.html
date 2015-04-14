@@ -32,20 +32,21 @@
   <body>
 
     <div class="container">
+
     <div class="guess-body">
-      <form class="form-number">
-        <h2 class="form-number-heading">Guess a number!</h2>
+    <h2 class="form-number-heading" id="instruction">Guess a number between 1 and 100.</h2>
+      <form class="form-number">        
         <label for="inputNumber" class="sr-only">Number</label>
         <input name="number" id="inputNumber" class="form-control" placeholder="Enter a number here!" required autofocus>
         <button class="btn btn-lg btn-primary btn-block" id="guess" type="submit">Submit Your Guess</button>
       </form>
 
         <div class="btn-group" role="group" aria-label="Options">
-        <button type="button" class="btn btn-lg btn-warning">Play Again</button>
+        <button type="button" class="btn btn-lg btn-warning" id="reset">Play Again</button>
         <button type="button" class="btn btn-lg btn-warning">Give Me a Hint</button>
         </div>
 
-        <h2 class="form-number-heading">3 Guesses Remaining</h2>
+        <h2 class="form-number-heading" id="guessesremaining">3 Guesses Remaining</h2>
     </div>
     </div> <!-- /container -->
 

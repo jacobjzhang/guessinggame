@@ -1,0 +1,7 @@
+Lessons Learned:
+
+- Keep variables global if you want to reference them after a function has ran (we wanted to keep randnum, guessednum, and difference)
+
+- When replacing a jQuery element, make sure the replacement has the same identifier so you could replace it again.
+
+- Don't return anything unless you want to end the function (??)
