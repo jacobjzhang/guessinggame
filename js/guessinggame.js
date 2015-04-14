@@ -2,7 +2,7 @@ function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-var randnum = getRandomArbitrary(0, 100);
+var randnum = Math.floor(getRandomArbitrary(0, 100));
 
 var counter = 0;
 
@@ -30,22 +30,33 @@ $(document).ready(function(){
 	// Why can't I use (Math.abs(randnum - guessednum)?
 	//	var difference = randnum - guessednum;
 
-	if (Math.abs(difference) <= 10) {
-	// Compare it
-
-	//	if (difference <= 10 || difference <= -10) {
-		$( "#instruction" ).replaceWith( "<h2 id='instruction'>You're Hot! Keep Trying!</h2>" );
-		counter++;
-		$( "#guessesremaining" ).replaceWith( "<h2 id='guessesremaining'>"+(3 - counter)+" Guesses Remaining</h2>" );
-		lastguess = guessednum;
-	//	return difference;
+		if (difference == 0) {
+			$( ".guess-body" ).css( "background-color","#FFF");
+			$( ".guess-body" ).css( "color","#000");
+			$( "#instruction" ).replaceWith( "<h1 id='instruction' style='font-size: 90px;'>YOU WIN!</h2>" );
+			$( "#instruction" ).animate({
+			    width: "100%",
+			    fontSize: "19em",
+			    opacity: 1.0,
+			    borderWidth: "10px"}, 3000);
 		}
-		else {
-			$( "#instruction" ).replaceWith( "<h2 id='instruction'>You're Cold! Keep Trying!</h2>" );
+
+		else if(Math.abs(difference) <= 10) {
+		// Compare it
+
+		//	if (difference <= 10 || difference <= -10) {
+			$( "#instruction" ).replaceWith( "<h2 id='instruction'>You're Hot! Keep Trying!</h2>" );
 			counter++;
-			$( "#guessesremaining" ).replaceWith( "<h2 id='guessesremaining'>"+(3 - counter)+" Guesses Remaining</h2>" );//		return difference;
+			$( "#guessesremaining" ).replaceWith( "<h2 id='guessesremaining'>"+(3 - counter)+" Guesses Remaining</h2>" );
 			lastguess = guessednum;
-			};
+		//	return difference;
+			}
+			else {
+				$( "#instruction" ).replaceWith( "<h2 id='instruction'>You're Cold! Keep Trying!</h2>" );
+				counter++;
+				$( "#guessesremaining" ).replaceWith( "<h2 id='guessesremaining'>"+(3 - counter)+" Guesses Remaining</h2>" );//		return difference;
+				lastguess = guessednum;
+				};
 	}
 	else {
 		counter++;
@@ -59,6 +70,14 @@ $(document).ready(function(){
   	counter = 0;
   		$( "#instruction" ).replaceWith( "<h2 id='instruction'>Guess a number between 1 and 100.</h2>" );		
  		$( "#guessesremaining" ).replaceWith( "<h2 id='guessesremaining'>3 Guesses Remaining</h2>" );//		return difference;
+ 		$( ".guess-body" ).css( "background-color","#000");
+  });
+});
+
+
+$(document).ready(function(){
+  $("#hint").on("click", function(){
+  	return confirm("The number is " + randnum + "!")
   });
 });
 
